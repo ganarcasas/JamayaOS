@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "Welcome to JamayaOS!"
+
+while true; do
+    echo -n "JamayaOS> "
+    read cmd
+
+    if [ "$cmd" == "exit" ]; then
+        echo "Goodbye from JamayaOS!"
+        break
+    fi
+
+    if [ -x "$HOME/JamayaOS/bin/$cmd" ]; then
+        "$HOME/JamayaOS/bin/$cmd"
+    else
+        echo "$cmd: command not found"
+    fi
+done
+
